@@ -14,7 +14,7 @@
 				{	// Get text sent			
 					$text = $event['message']['text'];			
 					// Get replyToken			
-					$replyToken = $event['replyToken'];			
+					//$replyToken = $event['replyToken'];			
 					// Build message to reply back			
 					$messages = [
 								 'type' => 'text',
@@ -28,6 +28,7 @@
 					//		 'messages' => [$messages],			
 					//		];			
 					$data = {
+							"richMenuId": "richmenu-88c05ef6921ae53f8b58a25f3a65faf7",
 							"size": {"width": 2500,"height": 1686},
 							"selected": false,
 							"name": "Nice richmenu",
@@ -35,7 +36,9 @@
 							"areas": [
 									  {
 										"bounds": {"x": 0,"y": 0,"width": 2500,"height": 1686},
-										"action": {"type": "postback","data": "action=buy&itemid=123"}
+										"action": {"type": "postback",
+												   "data": "action=buy&itemid=123"
+												  }
 									  }
 									 ]
 					}
