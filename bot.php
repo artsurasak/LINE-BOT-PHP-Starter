@@ -21,13 +21,28 @@
 								 'text' => $text
 								];			
 					// Make a POST Request to Messaging API to reply to sender			
-					$url = 'https://api.line.me/v2/bot/message/reply';			
-					$data = [
-							 'replyToken' => $replyToken,
-							 'messages' => [$messages],			
-							];			
+					//$url = 'https://api.line.me/v2/bot/message/reply';			
+					$url = 'https://api.line.me/v2/bot/richmenu';
+					//$data = [
+					//		 'replyToken' => $replyToken,
+					//		 'messages' => [$messages],			
+					//		];			
+					$data = {
+							"size": {"width": 2500,"height": 1686},
+							"selected": false,
+							"name": "Nice richmenu",
+							"chatBarText": "Tap to open",
+							"areas": [
+									  {
+										"bounds": {"x": 0,"y": 0,"width": 2500,"height": 1686},
+										"action": {"type": "postback","data": "action=buy&itemid=123"}
+									  }
+									 ]
+					}
 					$post = json_encode($data);			
-					$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);			
+					$headers = array('Content-Type: application/json', 
+									 'Authorization: Bearer ' . $access_token
+									 );			
 					$ch = curl_init($url);			
 					curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");			
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
