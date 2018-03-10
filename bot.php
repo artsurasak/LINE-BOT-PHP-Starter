@@ -14,7 +14,7 @@
 				{	// Get text sent			
 					$text = $event['message']['text'];			
 					// Get replyToken			
-					//$replyToken = $event['replyToken'];			
+					$replyToken = $event['replyToken'];			
 					// Build message to reply back			
 					$messages = [
 								 'type' => 'text',
