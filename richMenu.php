@@ -5,6 +5,38 @@
 	// Parse JSON
 	$events = json_decode($content, true);
 	// Validate parsed JSON data
+	$url = 'https://api.line.me/v2/bot/richmenu';	
+	$sizeTest = [
+			 'width' => 2500,
+			 'height' => 1586
+			];
+	$areaTest = [
+				'bounds' => ['x' => 0,'y' => 0,'width' => 2500,'height' => 1686],
+				'action' => ['type' => 'postback','data' => 'action=buy&itemid=123']
+				]
+	$data = [
+			 'size' => [$sizeTest],
+			 'selected' => false,
+			 'name' => 'Controller',
+			 'chatBarText' => 'Controller',
+			 'areas' => [$areaTest]
+			 //'messages' => [$messages],			
+			];	
+	$post = json_encode($data);			
+	$headers = array('Content-Type: application/json', 
+					 'Authorization: Bearer ' . $access_token
+					);
+	$ch = curl_init($url);
+	curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");			
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);			
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $post);			
+	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);			
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);			
+	$result = curl_exec($ch);			
+	curl_close($ch);			
+	echo $result . "";		
+	
+	/*
 	if (!is_null($events['events'])) 
 		{	
 		// Loop through each event	
@@ -58,5 +90,5 @@
 					echo $result . "";		
 				}	
 			}
-		}
+		}*/
 echo "OK";
