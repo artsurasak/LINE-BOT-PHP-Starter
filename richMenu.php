@@ -10,23 +10,23 @@
 	$sizeTest = [
 			 'width' => 2500,
 			 'height' => 1586
-			];
+			]
 	$areaTest = [
 				'bounds' => ['x' => 0,'y' => 0,'width' => 2500,'height' => 1686],
 				'action' => ['type' => 'postback','data' => 'action=buy&itemid=123']
 				]
 	$data = [
-			 'richmenu' => [
+			 //'richmenus' => [
 			 'richMenuId' => "{richMenuId}",
 			 'size' => [$sizeTest],
 			 'selected' => false,
-			 //'name' => 'Controller',
-			 //'chatBarText' => 'Controller',
+			 'name' => "Nice richmenu",
+			 'chatBarText' => 'Tap to open',
 			 'areas' => [$areaTest],
 			 
 			 //'messages' => [$messages],			
 			];
-			]
+			//]
 	$post = json_encode($data);			
 	$headers = array('Content-Type: application/json', 
 					 'Authorization: Bearer ' . $access_token
