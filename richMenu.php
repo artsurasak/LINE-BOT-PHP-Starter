@@ -42,7 +42,7 @@
 	$result = curl_exec($ch);			
 	curl_close($ch);			
 	echo $result . "";		*/
-	echo $event;
+	echo $events;
 	/*
 	if (!is_null($events['events'])) 
 		{	
