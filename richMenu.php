@@ -16,14 +16,17 @@
 				'action' => ['type' => 'postback','data' => 'action=buy&itemid=123']
 				]
 	$data = [
+			 'richmenu' => [
+			 'richMenuId' => "{richMenuId}",
 			 'size' => [$sizeTest],
 			 'selected' => false,
-			 'name' => 'Controller',
-			 'chatBarText' => 'Controller',
+			 //'name' => 'Controller',
+			 //'chatBarText' => 'Controller',
 			 'areas' => [$areaTest],
-			 'richMenuId' => $event['richMenuId']
+			 
 			 //'messages' => [$messages],			
-			];	
+			];
+			]
 	$post = json_encode($data);			
 	$headers = array('Content-Type: application/json', 
 					 'Authorization: Bearer ' . $access_token
