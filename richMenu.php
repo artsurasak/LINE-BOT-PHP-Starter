@@ -6,6 +6,8 @@
 	// Parse JSON
 	$events = json_decode($content, true);
 	// Validate parsed JSON data
+	$events = json_decode($content, true);
+	/*
 	$url = 'https://api.line.me/v2/bot/richmenu';	
 	$sizeTest = [
 			 'width' => 2500,
@@ -39,8 +41,8 @@
 	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);			
 	$result = curl_exec($ch);			
 	curl_close($ch);			
-	echo $result . "";		
-	
+	echo $result . "";		*/
+	echo $event;
 	/*
 	if (!is_null($events['events'])) 
 		{	
@@ -96,4 +98,4 @@
 				}	
 			}
 		}*/
-echo "OK";
+//echo "OK";
