@@ -12,15 +12,15 @@
 			{		// Reply only when message sent is in 'text' format		
 				if ($event['type'] == 'message' && $event['message']['type'] == 'text') 
 				{	// Get text sent	
-					echo $event['replyToken'];
-					/*	
+					//echo $event['replyToken'];
+					
 					$text = $event['message']['text'];			
 					// Get replyToken			
 					$replyToken = $event['replyToken'];			
 					// Build message to reply back			
 					$messages = [
 								 'type' => 'text',
-								 'text' => $text
+								 'text' => $replyToken
 								 //'text' => 'Hello!'
 								];			
 					// Make a POST Request to Messaging API to reply to sender			
@@ -58,7 +58,7 @@
 					$result = curl_exec($ch);			
 					curl_close($ch);			
 					echo $result . "";		
-					*/
+					
 				}	
 			}
 		}
