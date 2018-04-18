@@ -4,11 +4,10 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('wNGFPyRYMYL1ZuaxZBZN+
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '553bc1a177fb9b042fa30b3544357169']);
 $response = $bot->getProfile('U0d589cbccf8f08124f85a5e2e86b8ce4');
 if ($response->isSucceeded()) {
-	echo 'Success';
     $profile = $response->getJSONDecodedBody();
-    //echo $profile['displayName'];
-    //echo $profile['pictureUrl'];
-    //echo $profile['statusMessage'];
+    echo $profile['displayName'];
+    echo $profile['pictureUrl'];
+    echo $profile['statusMessage'];
 }
 
 
