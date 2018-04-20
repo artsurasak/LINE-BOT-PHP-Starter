@@ -14,13 +14,14 @@
 				//{	// Get text sent	
 					//echo $event['replyToken'];
 					$user = $event['source']['userId'];
+					$richMenu = $event['richMenuId']
 					$text = $event['message']['text'];			
 					// Get replyToken			
 					$replyToken = $event['replyToken'];			
 					// Build message to reply back			
 					$messages = [
 								 'type' => 'text',
-								 'text' => $user
+								 'text' => $richMenu
 								 //'text' => 'Hello!'
 								];			
 					// Make a POST Request to Messaging API to reply to sender			
