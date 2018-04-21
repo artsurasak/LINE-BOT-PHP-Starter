@@ -21,7 +21,7 @@
 					// Build message to reply back			
 					$messages = [
 								 'type' => 'text',
-								 'text' => $user
+								 'text' => $replyToken
 								 //'text' => 'Hello!'
 								];			
 					// Make a POST Request to Messaging API to reply to sender			
